@@ -15,6 +15,12 @@
 html {
   font-size: 62.5%;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*End of Common Styles */
 
 /* Mouse Circle */
@@ -88,7 +94,7 @@ html {
       rgba(190, 153, 153, 0.7),
       rgba(144, 167, 201, 0.7)
     ),
-    url(../images/bg3.jpg) center no-repeat;
+    url(../images/bg.jpg) center no-repeat;
 }
 /* End of Page BG */
 
@@ -98,7 +104,6 @@ html {
   width: 100%;
   height: 100vh;
 }
-/* End */
 
 /* Logo */
 .logo {
@@ -109,4 +114,86 @@ html {
   text-transform: uppercase;
   color: #ffff;
 }
-/* End */
+/* End of Logo*/
+
+/* Animated Circles */
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.circle {
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  background-color: red;
+  align-self: center;
+  justify-self: center;
+  /* opacity: 0.5; */
+}
+
+.circle-1 {
+  background: url(../images/frank.JPG) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem dotted #a7a7a7;
+}
+.circle-2 {
+  background: url(../images/family.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem double #ffff;
+}
+.circle-3 {
+  background: url(../images/rocks.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem double #a7a7a7;
+}
+.circle-4 {
+  background: url(../images/balcony.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem dotted #ffff;
+}
+
+.main-circle {
+  width: 55rem;
+  height: 55rem;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.main-circle img {
+  mix-blend-mode: luminosity;
+}
+/* End of Animated Circles */
+
+/* Featured Text */
+.featured-text {
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  width: 0;
+  word-wrap: break-word;
+  line-height: 2.5;
+  position: sticky;
+  top: 0;
+}
+
+.featured-text-1 {
+  margin: 0 auto 0 10rem;
+}
+.featured-text-2 {
+  margin: 0 10rem 0 auto;
+}
+/* End of Featured Text  */
+
+/* End of Section 1  */
