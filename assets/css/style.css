@@ -31,6 +31,7 @@ html {
   z-index: 300;
   transform: translate(-50%, -50%);
   opacity: 0;
+  pointer-events: none;
 }
 .mouse-circle {
   width: 6rem;
@@ -136,6 +137,10 @@ html {
   align-self: center;
   justify-self: center;
   /* opacity: 0.5; */
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 2s, top 2s;
 }
 
 .circle-1 {
@@ -143,36 +148,50 @@ html {
   background-size: cover;
   background-clip: content-box;
   border: 0.5rem dotted #a7a7a7;
+  margin-left: -10rem;
 }
 .circle-2 {
   background: url(../images/family.jpg) center no-repeat;
   background-size: cover;
   background-clip: content-box;
   border: 0.5rem double #ffff;
+  margin-right: -10rem;
 }
 .circle-3 {
   background: url(../images/rocks.jpg) center no-repeat;
   background-size: cover;
   background-clip: content-box;
   border: 0.5rem double #a7a7a7;
+  margin-left: -10rem;
 }
 .circle-4 {
   background: url(../images/balcony.jpg) center no-repeat;
   background-size: cover;
   background-clip: content-box;
   border: 0.5rem dotted #ffff;
+  margin-right: -10rem;
 }
 
 .main-circle {
-  width: 55rem;
-  height: 55rem;
+  width: 45rem;
+  height: 45rem;
   position: absolute;
   overflow: hidden;
   border-radius: 50%;
+  transition: width 0.2s, height 0.2s;
+}
+
+.main-circle:hover {
+  width: 55rem;
+  height: 55rem;
 }
 
 .main-circle img {
   mix-blend-mode: luminosity;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 2s, top 2s;
 }
 /* End of Animated Circles */
 
@@ -195,5 +214,59 @@ html {
   margin: 0 10rem 0 auto;
 }
 /* End of Featured Text  */
+
+/* main button */
+.main-btn {
+  position: absolute;
+  bottom: 3rem;
+  width: 10rem;
+  height: 10rem;
+  background-color: pink;
+  border-radius: 50%;
+  border: 0.2rem dotted #ffff;
+  padding: 0.1rem;
+}
+
+.main-btn-content {
+  width: 100%;
+  height: 100%;
+  border: 0.2rem dotted blue;
+  border-radius: 50%;
+  transform: rotate(40deg);
+}
+
+.main-btn-line {
+  position: absolute;
+  top: 3rem;
+  width: 2rem;
+  height: 0.5rem;
+  border: 0.1rem solid #fff;
+}
+.main-btn-line:nth-child(1) {
+  transform: rotateZ(-45deg) translateX(-0.65rem);
+  transform-origin: left center;
+  border-right: none;
+}
+.main-btn-line:nth-child(2) {
+  transform: rotateZ(45deg) translateX(0.65rem);
+  transform-origin: right center;
+  border-left: none;
+}
+
+.main-btn-line:nth-child(3) {
+  transform: rotateZ(90deg) translateX(0.5rem);
+  border-left: none;
+}
+
+.main-btn span {
+  position: absolute;
+  bottom: 2rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+/* End of main button */
 
 /* End of Section 1  */
