@@ -63,22 +63,41 @@ document.body.addEventListener('mouseleave', () => {
 });
 
 // Main Button
-const mainBtn = document.querySelector('.main-btn');
+const mainBtns = document.querySelectorAll('.main-btn');
 
-let ripple;
+mainBtns.forEach(btn => {
+    let ripple;
 
-mainBtn.addEventListener('mouseenter', (e) => {
-    const left = e.clientX - e.target.getBoundingClientRect().left;
-    const top = e.clientY - e.target.getBoundingClientRect().top;
+    btn.addEventListener('mouseenter', (e) => {
+        const left = e.clientX - e.target.getBoundingClientRect().left;
+        const top = e.clientY - e.target.getBoundingClientRect().top;
 
-    ripple = document.createElement('div')
-    ripple.classList.add('ripple')
-    ripple.style.left = `${left}px`;
-    ripple.style.top = `${top} px`;
-    mainBtn.prepend(ripple)
-});
+        ripple = document.createElement('div')
+        ripple.classList.add('ripple')
+        ripple.style.left = `${left}px`;
+        ripple.style.top = `${top} px`;
+        btn.prepend(ripple)
+    });
 
-mainBtn.addEventListener('mouseleave', () => {
-    mainBtn.removeChild(ripple);
+    btn.addEventListener('mouseleave', () => {
+        btn.removeChild(ripple);
+    })
 })
+
+
 // End of Main Button
+
+// About me text
+const aboutMeText = document.querySelector('.about-me-text')
+const aboutMeTextContent = 'Project Manager and Designer.';
+
+Array.from(aboutMeTextContent).forEach(char => {
+    const span = document.createElement('span')
+    span.textContent = char;
+    aboutMeText.appendChild(span);
+
+    span.addEventListener('mouseenter', (e) => {
+        e.target.style.animation = "aboutMeTextAnim 5s infinite"
+    });
+})
+// End of about me text
